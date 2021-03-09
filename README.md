@@ -1,3 +1,3 @@
 # Weather API
 
-basic weather api using open weather´s api key.
+basic weather fiinder using open weather´s api key.
