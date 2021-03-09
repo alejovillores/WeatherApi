@@ -21,12 +21,13 @@ class DataWeatherManager:
         
         return final_data
         
-        
+    def setData(self,data):
+        self.data = data
 
     def getPrincipalWeatherConditions(self):
         final_data = []
         if self.data != 0:
-            weather = self.data['weather']['main']
+            weather = self.data['weather'][0]['main']
         
             #diccionary with temperatures
             temperatures = self.data['main']
