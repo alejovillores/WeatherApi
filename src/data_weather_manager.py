@@ -4,7 +4,7 @@ Created on Tue Mar  9 08:51:10 2021
 
 @author: alejo
 """
-
+import data_logger as dt 
 class DataWeatherManager:
     
     def __init__(self,data = 0):
@@ -16,13 +16,13 @@ class DataWeatherManager:
             city_id = self.data['id']
             city_name = self.data['name']
             country = self.data['sys']['country']
-        
             final_data = [city_id,city_name,country]
         
         return final_data
         
     def setData(self,data):
         self.data = data
+        self.logger = dt.DataAnalitics(data['name'])
 
     def getPrincipalWeatherConditions(self):
         final_data = []
@@ -31,8 +31,9 @@ class DataWeatherManager:
         
             #diccionary with temperatures
             temperatures = self.data['main']
-        
+            
             final_data = [weather,temperatures]
+            self.logger.writeFile(self.data)
         
         return final_data
     

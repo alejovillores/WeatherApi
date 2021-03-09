@@ -10,10 +10,6 @@ import matplotlib.pyplot as plt
 
 class DataAnalitics:
     
-    ''' Que va a poder hacer ?
-    1) Leer data
-    2) Guardar data
-    3) Graficar data.'''
     
     def __init__(self,city_name):
         self.path = "C:/Users/alejo/Documents/Proyectos/WeatherApi/logs/"
@@ -23,9 +19,9 @@ class DataAnalitics:
     def writeFile(self,city_data):
         file = open(self.path + self.city_name + '.csv','w')
         
-        temperature = city_data['temperature']
-        humidity = city_data['humidity']
-        pressure = city_data['pressure']
+        temperature = city_data['main']['temp']
+        humidity = city_data['main']['humidity']
+        pressure = city_data['main']['pressure']
         
         file.write(str(self.currTime) + ',' + str(temperature) + ',' + str(humidity) + ',' + str(pressure))
         file.close()
@@ -59,6 +55,6 @@ class DataAnalitics:
                 x.append(item[0])
                 y.append(item[1])
         
-            plt.plot(x,y)
+            plt.plot(x,y,color='g')
             plt.show()
         
