@@ -35,7 +35,3 @@ class WearherApi :
         data = json.loads(r.content)
         return data
         
-    
-'''url ='https://api.openweathermap.org/data/2.5/weather?q=junin,ar&appid=0765a352299af83f9a0dcb84b1ac1c59' 
-req = requests.get(url)
-algo = json.loads(req.content)'''
