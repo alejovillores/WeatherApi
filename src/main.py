@@ -4,8 +4,7 @@ Created on Mon Mar  8 17:15:31 2021
 
 @author: alejo
 """
-import api
-import data_weather_manager
+
 
 
 def main():
